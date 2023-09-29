@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,10 +18,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        let rootNavigationController = UINavigationController(rootViewController: ViewController())
+        let rootNavigationController = UINavigationController(rootViewController: LoginViewController())
 
         self.window?.rootViewController = rootNavigationController
         window.makeKeyAndVisible()
+//        
+//        let appleIDProvider = ASAuthorizationAppleIDProvider()
+//        appleIDProvider.getCredentialState(forUserID: "/*user의 고유 ID값(xxxxx.xxxxxxxxxx.xxxx)*/") { (credentialState, error) in
+//            switch credentialState {
+//                case .authorized:
+//                   print("authorized")
+//                   DispatchQueue.main.async {
+//                     self.window?.rootViewController = CViewController()
+//                   }
+//                case .revoked:
+//                   print("revoked")
+//                case .notFound:
+//                   print("notFound")
+//                       
+//                default:
+//                    break
+//            }
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
