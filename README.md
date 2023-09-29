@@ -1,1 +1,1 @@
-# AppleLogin-Swift
+# OAuth-Swift
